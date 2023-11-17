@@ -1,8 +1,10 @@
 const SWAPI_BASE_URL = 'https://wizard-world-api.herokuapp.com/';
 
-window.onload = async () => {
-    let casafavorita=null;
+let casafavorita="Seleciona tu casa  favorita";
+let magofavorito='Seleciona tu mago  favorito';
 
+window.onload = async () => {
+    
     
 
     async function getAllHouses() {
@@ -44,7 +46,7 @@ window.onload = async () => {
         const mainHtmlElement = document.getElementById('main');
         const newElement = document.createElement('div');
         newElement.innerHTML = `
-        <h2>${Wizard.firstName} ${Wizard.lastName}</h2>
+        <h2 onclick="FavoritWizard('${Wizard.firstName},${Wizard.lastName}')">${Wizard.firstName} ${Wizard.lastName}</h2>
         
       `
         mainHtmlElement.appendChild(newElement);
@@ -100,14 +102,28 @@ window.onload = async () => {
         mainHtmlElement.innerHTML = '';
         mainHtmlElement.innerHTML = 'Favoritos';
 
-        
-
         newElement.innerHTML = `
-            
-            <p>${name}</p>
+            <p>${name} </p>
+            <p>${magofavorito}</p>
            
             `
          mainHtmlElement.appendChild(newElement);
-         casafavorita=name;   
+         casafavorita=name;  
+      }
+
+      function FavoritWizard(name){
+        const mainHtmlElement = document.getElementById('Favoritos');
+        const newElement = document.createElement('div');
+        mainHtmlElement.innerHTML = '';
+        mainHtmlElement.innerHTML = 'Favoritos';
+
+        newElement.innerHTML = `
+            <p>${casafavorita} </p>
+            <p>${name} </p>
+           
+            `
+         mainHtmlElement.appendChild(newElement);
+         magofavorito=name;   
+
       }
       
