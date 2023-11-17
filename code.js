@@ -11,7 +11,8 @@ window.onload = async () => {
     const mainHtmlElement = document.getElementById('main');
     const newElement = document.createElement('div');
     newElement.innerHTML = `
-      <h2>${Elixirs.name}</h2>
+      <h2>${Elixir.name}</h2>
+      <p>${Elixir.effect}</p>
       
     `;
     mainHtmlElement.appendChild(newElement);
