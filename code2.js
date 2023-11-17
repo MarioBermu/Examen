@@ -1,6 +1,7 @@
 const SWAPI_BASE_URL = 'https://wizard-world-api.herokuapp.com/';
 
 window.onload = async () => {
+    
 
     async function getAllHouses() {
         const response = await fetch(`${SWAPI_BASE_URL}Houses`);
@@ -8,18 +9,29 @@ window.onload = async () => {
         return data;
     }
     const Houses = await getAllHouses();
+    let i=1;
+
+    const grapmain = document.getElementById('main');
+    const grap = document.createElement('div');
+    grap.classList.add('wrapper')
+    
+   
+   
     for (const House of Houses) {
         
         const mainHtmlElement = document.getElementById('main');
         const newElement = document.createElement('div');
+        newElement.classList.add('contadorcasas'+ (i))
         newElement.innerHTML = `
+        
         <p>${House.name}</p>
-       
+        <img onclick="Favorite('${House.name}')" src=${House.name}.jpg alt="Imatge ${House.name} ">
         `
-            ;
-        mainHtmlElement.appendChild(newElement);
+        i++;  
+        grap.appendChild(newElement);
     };
-
+    grapmain.appendChild(grap);
+    
 
     const Wizards = await getAllWizards();
 
@@ -67,7 +79,7 @@ window.onload = async () => {
            
             `
             
-                ;
+                
             mainHtmlElement.appendChild(newElement);
         };
 
@@ -77,4 +89,15 @@ window.onload = async () => {
         const response = await fetch(`${SWAPI_BASE_URL}Elixirs/${id}`);
         const data = await response.json();
         return data;
+      }
+
+      function Favorite(name) {
+        const mainHtmlElement = document.getElementById('main');
+        const newElement = document.createElement('div');
+        newElement.innerHTML = `
+            <p>${name}</p>
+           
+            `
+         mainHtmlElement.appendChild(newElement);
+                
       }
