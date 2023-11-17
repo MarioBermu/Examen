@@ -1,3 +1,11 @@
+
+*{
+  
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
 .loader {
   width: 48px;
   height: 48px;
@@ -18,3 +26,21 @@
     transform: rotate(360deg);
   }
 }
+header{
+  background-color:#dad9bb;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15%;
+  height: 100px;
+  top: 0;
+  position: fixed;
+  width: 100%;}
+
+  body{
+    
+    padding-top: 120px;
+    /*background-color: #FFFDD0;
+    /* color texto */
+  }
