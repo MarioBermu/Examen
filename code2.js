@@ -1,6 +1,8 @@
 const SWAPI_BASE_URL = 'https://wizard-world-api.herokuapp.com/';
 
 window.onload = async () => {
+    let casafavorita=null;
+
     
 
     async function getAllHouses() {
@@ -25,7 +27,7 @@ window.onload = async () => {
         newElement.innerHTML = `
         
         <p>${House.name}</p>
-        <img onclick="Favorite('${House.name}')" src=${House.name}.jpg alt="Imatge ${House.name} ">
+        <img onclick="FavoriteHouse('${House.name}')" src=${House.name}.jpg alt="Imatge ${House.name} ">
         `
         i++;  
         grap.appendChild(newElement);
@@ -91,13 +93,21 @@ window.onload = async () => {
         return data;
       }
 
-      function Favorite(name) {
-        const mainHtmlElement = document.getElementById('main');
+      function FavoriteHouse(name) {
+        
+        const mainHtmlElement = document.getElementById('Favoritos');
         const newElement = document.createElement('div');
+        mainHtmlElement.innerHTML = '';
+        mainHtmlElement.innerHTML = 'Favoritos';
+
+        
+
         newElement.innerHTML = `
+            
             <p>${name}</p>
            
             `
          mainHtmlElement.appendChild(newElement);
-                
+         casafavorita=name;   
       }
+      
