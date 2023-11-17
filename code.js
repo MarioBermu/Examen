@@ -1,4 +1,4 @@
-const SWAPI_BASE_URL = 'https://wizard-world-api.herokuapp.com';
+const SWAPI_BASE_URL = 'https://wizard-world-api.herokuapp.com/';
 
 window.onload = async () => {
 
@@ -11,15 +11,15 @@ window.onload = async () => {
     const mainHtmlElement = document.getElementById('main');
     const newElement = document.createElement('div');
     newElement.innerHTML = `
-      <h2>${Elixirs.name}</h2>
-      <p>${Elixirs.effect}</p>
+      <h2>${Elixirs.Name}</h2>
+      
     `;
     mainHtmlElement.appendChild(newElement);
   }
 };
 
 async function getAllElixirs() {
-  const response = await fetch(`${SWAPI_BASE_URL}/Elixirs`);
+  const response = await fetch(`${SWAPI_BASE_URL}Elixirs`);
   const data = await response.json();
   return data.results;
 }
