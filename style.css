@@ -95,7 +95,7 @@ header{
   justify-content: center;
   gap: 15%;
   height: 200px;
-  width: 500px;
+  width: 550px;
   right: 0;
   top: 10;
   position: fixed;
@@ -111,4 +111,9 @@ header{
     height: 340px;
     object-fit: cover;
     border-radius: 40px 40px 40px 40px;
+  }
+   .header span{
+    
+    font-size: 20px;
+    font-weight: 300;
   }

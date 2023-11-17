@@ -4,8 +4,6 @@ let casafavorita="Seleciona tu casa  favorita";
 let magofavorito='Seleciona tu mago  favorito';
 
 window.onload = async () => {
-    
-    
 
     async function getAllHouses() {
         const response = await fetch(`${SWAPI_BASE_URL}Houses`);
@@ -64,7 +62,12 @@ window.onload = async () => {
 
         };
     };
-}
+    
+    
+        
+}   
+    
+
     async function getAllWizards() {
         const response = await fetch(`${SWAPI_BASE_URL}Wizards`);
         const data = await response.json();
@@ -100,7 +103,7 @@ window.onload = async () => {
         const mainHtmlElement = document.getElementById('Favoritos');
         const newElement = document.createElement('div');
         mainHtmlElement.innerHTML = '';
-        mainHtmlElement.innerHTML = 'Favoritos';
+        mainHtmlElement.innerHTML = 'Favoritos⭐';
 
         newElement.innerHTML = `
             <p>${name} </p>
@@ -115,7 +118,7 @@ window.onload = async () => {
         const mainHtmlElement = document.getElementById('Favoritos');
         const newElement = document.createElement('div');
         mainHtmlElement.innerHTML = '';
-        mainHtmlElement.innerHTML = 'Favoritos';
+        mainHtmlElement.innerHTML = 'Favoritos⭐';
 
         newElement.innerHTML = `
             <p>${casafavorita} </p>
